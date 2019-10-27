@@ -1,39 +1,41 @@
 import React from 'react';
 import './App.css';
 
-// import Styled Components
-import styled from 'styled-components';
+import styled from 'styled-components'
+
+// 01. Styling Elements
+import { Button } from './01.Styling_Elements/Button';
+
+// 02. Styling based on Props
+import { PropsButton } from './02.Styling_based_on_props/PropsButton';
+
+// 03. Extending Style
+import { OtherButton } from './03.Extending_Styles/OtherButton';
+
+// 04. Theming
+import { ThemeProvider } from 'styled-components';
+import theme from './themes/theme';
 
 function App() {
-  const Button = styled.button`
-    width: auto;
-    height: 60px;
-    color: black;
-    cursor: pointer;
-    border-radius: 5px;
-    background: ${props => props.purple ? 'purple' : props.red ? 'red' : 'orange'};
-    transition: .5s;
-    font-size: 14px;
-    padding: 10px 15px;
-
-    &:hover {
-      color: ${props => props.purple ? 'purple' : props.red ? 'red' : 'orange'};
-      background: black;
-    }
+  const Title = styled.h1`
+  color: ${(props) => props.theme.darkTheme.text};
+  background: ${(props) => props.theme.darkTheme.background};
+  border-radius: 10px;
+  padding: 10px 20px;
   `;
-
-  const OtherButton = styled(Button)`
-    border-radius: 30px;
-  `
 
   return (
     <div className='App'>
-      {/* Styling elements  */}
-      <Button purple>Portugal Coding</Button>
-      <Button>Styled Components</Button>
-      <Button red>Other button</Button>
+      <ThemeProvider theme={theme}>
+        <Button> Portugal Coding </Button>
 
-      <OtherButton red>Portugal</OtherButton>
+        <PropsButton>Portugal Coding</PropsButton>
+        <PropsButton lime>Portugal Coding</PropsButton>
+        <PropsButton orangered>Portugal Coding</PropsButton>
+
+        <OtherButton orangered>Portugal Coding</OtherButton>
+        <Title>test</Title>
+      </ThemeProvider>
     </div>
   );
 }
