@@ -1,9 +1,9 @@
 ## Demo for presentation Portugal Coding - Mário Prada
 
-### `git clone https://github.com/MarioSilvaPrada/demo-styled-components-presentation`
+#### 1. `git clone https://github.com/MarioSilvaPrada/demo-styled-components-presentation`
 
-### cd demo-styled-components-presentation and open it
+#### 2. cd demo-styled-components-presentation and open it
 
-### `npm install || yarn`
+#### 3. `npm install || yarn`
 
-### `npm start || yarn start`
+#### 4. `npm start || yarn start`
